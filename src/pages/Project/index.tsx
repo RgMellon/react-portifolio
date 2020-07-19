@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
@@ -17,6 +17,20 @@ import {
 } from './styles';
 
 const Project: React.FC = () => {
+  const showQuantitySlides = useMemo(() => {
+    const { innerWidth } = window;
+
+    if (innerWidth <= 425) {
+      return 1;
+    }
+
+    if (innerWidth > 425 && innerWidth <= 768) {
+      return 2;
+    }
+
+    return 3;
+  }, []);
+
   return (
     <Container>
       <ContainerTitle>
@@ -72,8 +86,9 @@ const Project: React.FC = () => {
         <div>
           <CarouselProvider
             naturalSlideWidth={200}
-            naturalSlideHeight={120}
+            naturalSlideHeight={350}
             totalSlides={3}
+            visibleSlides={showQuantitySlides}
             isPlaying
           >
             <Slider>
@@ -82,14 +97,14 @@ const Project: React.FC = () => {
                   src="https://camo.githubusercontent.com/9e2828a5cd3e52b26f719e709830927c86574c1f/68747470733a2f2f692e696d6775722e636f6d2f3575475570585a2e6a7067"
                   alt=""
                 />
-                <img
+                {/* <img
                   src="https://camo.githubusercontent.com/9474f70d1485ccf6db3a15c9aad25b857b86b00c/68747470733a2f2f692e696d6775722e636f6d2f744a6f5a7748742e6a7067"
                   alt=""
                 />
                 <img
                   src="https://camo.githubusercontent.com/2b8bc041fc0d1829aacea725c10118c658a20017/68747470733a2f2f692e696d6775722e636f6d2f423450527032432e6a7067"
                   alt=""
-                />
+                /> */}
               </Slide>
               <Slide index={1}>
                 <img
@@ -97,6 +112,7 @@ const Project: React.FC = () => {
                   alt=""
                 />
               </Slide>
+
               <Slide index={2}>
                 <img
                   src="https://camo.githubusercontent.com/2b8bc041fc0d1829aacea725c10118c658a20017/68747470733a2f2f692e696d6775722e636f6d2f423450527032432e6a7067"

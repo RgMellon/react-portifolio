@@ -51,6 +51,11 @@ export const Container = styled.div`
   margin-left: 340px;
   padding: 20px;
   overflow: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0px;
+  }
 `;
 
 export const ContainerTitle = styled.section`
@@ -108,7 +113,7 @@ export const Content = styled.section`
 
     img {
       margin: 20px;
-      width: 300px;
+      width: 90%;
       border-radius: 8px;
     }
   }
