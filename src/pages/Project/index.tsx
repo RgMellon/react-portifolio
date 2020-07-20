@@ -114,9 +114,13 @@ const Project: React.FC<RouteComponentProps<RouteProp>> = ({ match }) => {
                 project.imagesPreview.map((preview, index) => {
                   return (
                     <Slide index={index} key={preview}>
-                      {/* <a href={preview} rel="noreferrer" target="_blank"> */}
-                      <img src={preview} alt={preview} />
-                      {/* </a> */}
+                      <a
+                        href={preview}
+                        rel="noreferrer noopener"
+                        target="_blank"
+                      >
+                        <img src={preview} alt={preview} />
+                      </a>
                     </Slide>
                   );
                 })}
