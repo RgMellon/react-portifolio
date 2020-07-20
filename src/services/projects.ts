@@ -272,4 +272,65 @@ export default [
       'https://camo.githubusercontent.com/6e457eac74a752ad95c6ca7382b03c8ed89c3ace/68747470733a2f2f692e696d6775722e636f6d2f386a427a486b672e706e67',
     ],
   },
+
+  {
+    id: '9',
+    title: 'Electron Gestor pedidos uaufi',
+    description: 'Um Instalável feito com electron para gerenciar seus pedidos',
+    tecs: ['Electron', 'NodeJs'],
+    logo:
+      'https://pbs.twimg.com/profile_images/1144662764964786179/SgsUpLxL_400x400.png',
+    largeTitle: 'Gestor pedidos',
+    largeDescription: `
+     Um dos desafios que chegaram até mim, na empresa onde trabalho, foi desenvolver uma aplicação
+     em Electron para gerenciar os pedidos, além de aceitar, recusar e imprimir as notinhas.
+     Através do nosso aplicativo, um usuário pode fazer pedidos, e o gestor tem como função notificar no momento, utilizando
+     de sockets para avisar na mesma hora que a compra foi feita. Além de tocar um alarme para que o
+     usuário possa dar prosseguimento no pedido.
+    `,
+    tecsTitle: 'O projeto foi feito utilizando das seguines tecnologias',
+
+    largeTecs: [
+      'Electron',
+      'Boilerplate em ReactJS',
+      'Redux',
+      'Redux-Saga',
+      'Styled-Components',
+      'Nodejs',
+      'Laravel',
+      'Redis',
+    ],
+
+    imagesPreview: [
+      'https://i.imgur.com/jlK8zAT.png',
+      'https://i.imgur.com/vKGgsSo.png',
+      'https://i.imgur.com/1eL41to.png',
+      'https://i.imgur.com/xK7jS01.png',
+    ],
+  },
+
+  {
+    id: '10',
+    title: 'Dashboard conexões',
+    description: 'Um dashboard que gerencia as conexões com a internet',
+    tecs: ['VueJS', 'NodeJs'],
+    logo: 'https://i.imgur.com/ImCq8y1.png',
+    largeTitle: 'Dashboard conexões',
+    largeDescription: `
+      Nesse projeto, trabalhei com uma das maiores redes de hotelaria do brasil através da Uau-fi, a Atlantica Hotels.
+      O Objetivo desse dashboard é gerenciar as conexões dos usuários que são feitas pelo nosso outro sistema de HOTSPOT.
+      Além de ver a quantidade de usuários cadastrados, ou que estão conectados, ele possui uma série de outras funcionalidades
+      como criar salão de eventos para o usuário conectar, ou planos de acesso. Tudo através da Mikrotik
+    `,
+    tecsTitle: 'O projeto foi feito utilizando das seguines tecnologias',
+
+    largeTecs: ['VueJs', 'Vuex', 'Nodejs', 'NodeJs'],
+
+    imagesPreview: [
+      'https://i.imgur.com/AKaeoPL.png',
+      'https://i.imgur.com/FHg54ny.png',
+      'https://i.imgur.com/5PBWDSU.png',
+      'https://i.imgur.com/1BRbaQF.png',
+    ],
+  },
 ];

@@ -67,6 +67,11 @@ export const Project = styled(Link)`
 export const Tags = styled.section`
   display: flex;
 
+  @media (max-width: 768px) {
+    margin-left: -40px;
+    margin-top: 20px;
+  }
+
   div {
     display: inline-block;
     height: 30px;
