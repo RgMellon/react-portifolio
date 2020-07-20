@@ -91,7 +91,14 @@ const Project: React.FC<RouteComponentProps<RouteProp>> = ({ match }) => {
       <Content>
         <p>{project.largeDescription}</p>
 
-        {project.largeTecs && <h4> 💻 Tecnologias utilizadas </h4>}
+        {project.largeTecs && (
+          <h4>
+            <span role="img" aria-label="laptop">
+              💻
+            </span>
+            Tecnologias utilizadas
+          </h4>
+        )}
         <ul>{load && project.largeTecs.map(tec => <li>{tec}</li>)}</ul>
 
         <div>
