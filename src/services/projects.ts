@@ -209,4 +209,67 @@ export default [
       'https://lh3.googleusercontent.com/ABaKAFv4ovjoivDkULgidsochN-nZ81_bAM09cdMSujwLth4Ic8FvjV46BpXwb2zuTeI=w1440-h620-rw',
     ],
   },
+
+  {
+    id: '7',
+    title: 'Dashboard GoBarber',
+    description: 'Gerencie sua barbearia, veja seus agendamentos',
+    tecs: ['ReactJs', 'NodeJs'],
+    logo: 'https://i.imgur.com/yDoAmBG.png',
+    largeTitle: 'Dashboard GoBarber',
+    largeDescription: `
+     Com o Dashboard GoBarber, o barbeiro ao se cadastrar ficará disponível no aplicativo para que os usuários possam agendar
+     os cortes, além de ver seus agendamentos de uma forma intuitiva e facil.
+    `,
+    tecsTitle: 'O projeto foi feito utilizando das seguines tecnologias',
+
+    largeTecs: [
+      'ReactJs',
+      'Context api',
+      'React Hooks',
+      'Styled-Components',
+      'Nodejs',
+      'MongoDB',
+      'Postgres',
+      'Redis',
+    ],
+
+    imagesPreview: [
+      'https://camo.githubusercontent.com/8c00791998243b7a475e311f9ade1f3cd4e690ab/68747470733a2f2f692e696d6775722e636f6d2f58396b703130772e706e67',
+      'https://camo.githubusercontent.com/046563bb51a0962e715a7d54418165191e1cf134/68747470733a2f2f692e696d6775722e636f6d2f344649313656742e706e67',
+      'https://camo.githubusercontent.com/bfda582ee919682673512007edec4fca7600c041/68747470733a2f2f692e696d6775722e636f6d2f516b4938796b692e706e67',
+    ],
+  },
+
+  {
+    id: '8',
+    title: 'APP GoBarber',
+    description: 'Marque sua ida a barbearia',
+    tecs: ['React Native', 'NodeJs'],
+    logo: 'https://i.imgur.com/yDoAmBG.png',
+    largeTitle: 'APP GoBarber',
+    largeDescription: `
+     Com o App do GoBarber, você pode escolher um prestador de serviço que mais lhe agradar,
+     e com poucos passos poderá marcar a data e o horário da sua próxima ida ao barbeiro
+    `,
+    tecsTitle: 'O projeto foi feito utilizando das seguines tecnologias',
+
+    largeTecs: [
+      'React Native',
+      'Context api',
+      'React Hooks',
+      'Styled-Components',
+      'Nodejs',
+      'MongoDB',
+      'Postgres',
+      'Redis',
+    ],
+
+    imagesPreview: [
+      'https://camo.githubusercontent.com/3727d002aabced8b8a86bd039b89795cd4edde0c/68747470733a2f2f692e696d6775722e636f6d2f4d354e3578797a2e706e67',
+      'https://camo.githubusercontent.com/bfe19ce538997065a31bc5027fc2cf835df99e0d/68747470733a2f2f692e696d6775722e636f6d2f6573346e7577792e706e67',
+      'https://camo.githubusercontent.com/74420f3890d3a5660b8fc3d089200649766bc15d/68747470733a2f2f692e696d6775722e636f6d2f634d7543657a412e706e67',
+      'https://camo.githubusercontent.com/6e457eac74a752ad95c6ca7382b03c8ed89c3ace/68747470733a2f2f692e696d6775722e636f6d2f386a427a486b672e706e67',
+    ],
+  },
 ];
