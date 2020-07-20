@@ -43,6 +43,8 @@ export const Project = styled(Link)`
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    object-fit: cover;
+}
     /* border: 0.4px solid #fff; */
   }
 
@@ -63,6 +65,8 @@ export const Project = styled(Link)`
 `;
 
 export const Tags = styled.section`
+  display: flex;
+
   div {
     display: inline-block;
     height: 30px;
@@ -75,9 +79,9 @@ export const Tags = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 
     font-size: 10px;
     font-weight: bold;
+    margin: 20px 10px 20px 0px;
   }
 `;

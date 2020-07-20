@@ -13,7 +13,7 @@ const routes: React.FC = () => {
   return (
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/project" component={Project} />
+      <Route path="/project/:id" component={Project} />
     </Switch>
   );
 };

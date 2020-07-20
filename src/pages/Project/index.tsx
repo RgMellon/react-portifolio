@@ -1,9 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+
+import { RouteComponentProps } from 'react-router-dom';
 
 import {
   Container,
@@ -16,7 +18,44 @@ import {
   ButtonBackPage,
 } from './styles';
 
-const Project: React.FC = () => {
+import projectList from '../../services/projects';
+
+interface RouteProp {
+  id: string;
+}
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  tecs: Array<string>;
+  logo: string;
+  largeTitle: string;
+  largeDescription: string;
+  tecsTitle: string;
+  largeTecs: Array<string>;
+  imagesPreview: Array<string>;
+}
+
+const Project: React.FC<RouteComponentProps<RouteProp>> = ({ match }) => {
+  const [project, setProject] = useState({} as Project);
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    async function getProjects(): Promise<void> {
+      const findProject = projectList.find(
+        projectItem => projectItem.id === match.params.id,
+      );
+
+      if (findProject) {
+        setProject(findProject);
+        setLoad(true);
+      }
+    }
+
+    getProjects();
+  }, [match.params.id]);
+
   const showQuantitySlides = useMemo(() => {
     const { innerWidth } = window;
 
@@ -31,6 +70,14 @@ const Project: React.FC = () => {
     return 3;
   }, []);
 
+  const getTotalSlides = useMemo(() => {
+    if (project.imagesPreview) {
+      return project.imagesPreview.length;
+    }
+
+    return 4;
+  }, [project.imagesPreview]);
+
   return (
     <Container>
       <ContainerTitle>
@@ -38,87 +85,34 @@ const Project: React.FC = () => {
           <FiChevronLeft size={30} color="#fff" />
         </ButtonBackPage>
         <TitleDetail />
-        <Title> Lorem sit amet </Title>
+        <Title>{project.largeTitle}</Title>
       </ContainerTitle>
 
       <Content>
-        <p>
-          {' '}
-          Passagem padrão original de Lorem Ipsum, usada desde o século XVI.
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum." Seção 1.10.32
-          de "de Finibus Bonorum et Malorum", escrita por Cícero em 45 AC "Sed
-          ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-          inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-          voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-          quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-          eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-          voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-          ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-          consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-          velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
-          fugiat quo voluptas nulla pariatur?" Tradução para o inglês por H.
-          Rackha, feita em 1914 "But I must explain to you how all this mistaken
-          idea of denouncing pleasure and praising pain was born and I will give
-          you a complete account of the system, and expound the actual teachings
-          of the great explorer of the truth, the master-builder of human
-          happiness. No one rejects, dislikes, or avoids pleasure itself,
-          because it is pleasure, but because those who do not know how to
-          pursue pleasure rationally encounter consequences that are extremely
-          painful. Nor again is there anyone who loves or pursues or desires to
-          obtain pain of itself, because it is pain, but because occasionally
-          circumstances occur in which toil and pain can procure him some great
-          pleasure. To take a trivial example, which of us ever undertakes
-          laborious physical exercise, except to obtain some advantage from it?
-          But who has any right to find fault with a man who chooses to enjoy a
-          pleasure that has no annoying consequences, or one who avoids a pain
-          that produces no resultant pleasure?"
-        </p>
+        <p>{project.largeDescription}</p>
+
+        {project.largeTecs && <h4> 💻 Tecnologias utilizadas </h4>}
+        <ul>{load && project.largeTecs.map(tec => <li>{tec}</li>)}</ul>
 
         <div>
           <CarouselProvider
             naturalSlideWidth={200}
             naturalSlideHeight={350}
-            totalSlides={3}
+            totalSlides={getTotalSlides}
             visibleSlides={showQuantitySlides}
             isPlaying
           >
             <Slider>
-              <Slide index={0}>
-                <img
-                  src="https://camo.githubusercontent.com/9e2828a5cd3e52b26f719e709830927c86574c1f/68747470733a2f2f692e696d6775722e636f6d2f3575475570585a2e6a7067"
-                  alt=""
-                />
-                {/* <img
-                  src="https://camo.githubusercontent.com/9474f70d1485ccf6db3a15c9aad25b857b86b00c/68747470733a2f2f692e696d6775722e636f6d2f744a6f5a7748742e6a7067"
-                  alt=""
-                />
-                <img
-                  src="https://camo.githubusercontent.com/2b8bc041fc0d1829aacea725c10118c658a20017/68747470733a2f2f692e696d6775722e636f6d2f423450527032432e6a7067"
-                  alt=""
-                /> */}
-              </Slide>
-              <Slide index={1}>
-                <img
-                  src="https://camo.githubusercontent.com/9e2828a5cd3e52b26f719e709830927c86574c1f/68747470733a2f2f692e696d6775722e636f6d2f3575475570585a2e6a7067"
-                  alt=""
-                />
-              </Slide>
-
-              <Slide index={2}>
-                <img
-                  src="https://camo.githubusercontent.com/2b8bc041fc0d1829aacea725c10118c658a20017/68747470733a2f2f692e696d6775722e636f6d2f423450527032432e6a7067"
-                  alt=""
-                />
-              </Slide>
+              {load &&
+                project.imagesPreview.map((preview, index) => {
+                  return (
+                    <Slide index={index} key={preview}>
+                      <a href={preview} rel="noreferrer" target="_blank">
+                        <img src={preview} alt={preview} />
+                      </a>
+                    </Slide>
+                  );
+                })}
             </Slider>
 
             <SlideBack>

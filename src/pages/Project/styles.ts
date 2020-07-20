@@ -102,6 +102,21 @@ export const Content = styled.section`
   transform: translateY(900px);
   animation: ${slideUp} 0.8s ease-in-out forwards 0.8s;
 
+  h4 {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  ul {
+    margin-left: 20px;
+    margin-top: 40px;
+
+    li {
+      margin-bottom: 20px;
+    }
+  }
+
   p {
     font-size: 18px;
     line-height: 28px;
