@@ -62,11 +62,14 @@ export const Footer = styled.footer`
   justify-content: center;
 `;
 
-export const ContainerIcon = styled.div`
+export const ContainerIcon = styled.button`
   margin: 10px;
   width: 40px;
   height: 40px;
   border: 1px solid #fff;
+  background: inherit;
+  color: #fff;
+
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;

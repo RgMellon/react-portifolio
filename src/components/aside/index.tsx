@@ -14,6 +14,10 @@ import {
 } from './styles';
 
 const components: React.FC = () => {
+  function handleRedirectTo(url: string): void {
+    window.open(url);
+  }
+
   return (
     <Container>
       <AvatarContainer to="/">
@@ -27,15 +31,27 @@ const components: React.FC = () => {
       </Description>
 
       <Footer>
-        <ContainerIcon>
+        <ContainerIcon
+          onClick={() =>
+            handleRedirectTo(
+              'https://www.linkedin.com/in/renan-melo-2b414a107/',
+            )
+          }
+        >
           <FiLinkedin color="#fff" size={20} />
         </ContainerIcon>
 
-        <ContainerIcon>
+        <ContainerIcon
+          onClick={() =>
+            handleRedirectTo('https://www.instagram.com/rgmellon/')
+          }
+        >
           <FiInstagram size={20} />
         </ContainerIcon>
 
-        <ContainerIcon>
+        <ContainerIcon
+          onClick={() => handleRedirectTo('https://github.com/RgMellon')}
+        >
           <FiGithub size={20} />
         </ContainerIcon>
       </Footer>
